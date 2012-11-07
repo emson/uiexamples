@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -10,7 +11,10 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require underscore
-//= require backbone
-//= require ./brijtalk_web
+//= require ./brijtalk_web/brijtalk_web
+//= require_tree ./brijtalk_web/initializers
+//= require_tree ./brijtalk_web/helpers
+//= require_tree ./brijtalk_web/models
+//= require_tree ./brijtalk_web/views
+//= require_tree ./brijtalk_web/templates
+//= require_tree ./brijtalk_web

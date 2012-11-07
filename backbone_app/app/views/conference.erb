@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en-english">
+    <meta name="author" content="Ruth John">
+    <meta name="copyright" content="The Lab, O2 Telefónica, 2012">
+    <meta name="keywords" content="conference, call">
+    <meta name="description" content="Elegant conference calling">
+    <title>BrijTalk: Elegant conferencing calling.</title>
+    <link rel="icon" href="/favicon1.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon1.ico" type="image/x-icon" />
+    <link href="/assets/application.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/assets/application.js" type="text/javascript"></script>
+    <script src="http://js.pusher.com/1.12/pusher.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <header role="banner">
+    <div class="wrapper">
+      <h1><a href="/">BrijTalk</a></h1>
+      <nav>
+        <a href="/conferences">Dashboard</a>
+        <a href="/contacts">| Contacts</a>
+      </nav>
+      <p class="logged-in"><span>Hello Ben Emson </span><a href="/users/sign_out" data-method="delete" rel="nofollow">Log Out</a></p>
+    </div>
+  </header>
+
+  <div data-conference-call-id="61ab8624f2d8cd26e1ec73d55fac2a73" data-participants="[{&quot;conference_id&quot;:146,&quot;contact_email&quot;:&quot;karl.turner@o2.com&quot;,&quot;created_at&quot;:&quot;2012-10-31T13:08:54+00:00&quot;,&quot;id&quot;:548,&quot;msisdn&quot;:&quot;447715202085&quot;,&quot;nickname&quot;:&quot;Karl Turner&quot;,&quot;state&quot;:&quot;pending&quot;,&quot;updated_at&quot;:&quot;2012-10-31T13:39:23+00:00&quot;,&quot;user_id&quot;:null},{&quot;conference_id&quot;:146,&quot;contact_email&quot;:&quot;dan.calabrese@o2.com&quot;,&quot;created_at&quot;:&quot;2012-10-31T13:39:23+00:00&quot;,&quot;id&quot;:556,&quot;msisdn&quot;:&quot;447830170512&quot;,&quot;nickname&quot;:&quot;Dan Calabrese&quot;,&quot;state&quot;:&quot;pending&quot;,&quot;updated_at&quot;:&quot;2012-10-31T13:39:23+00:00&quot;,&quot;user_id&quot;:null},{&quot;conference_id&quot;:146,&quot;contact_email&quot;:&quot;daniel.payne@o2.com&quot;,&quot;created_at&quot;:&quot;2012-10-31T13:39:23+00:00&quot;,&quot;id&quot;:553,&quot;msisdn&quot;:&quot;447718189019&quot;,&quot;nickname&quot;:&quot;Daniel Payne&quot;,&quot;state&quot;:&quot;pending&quot;,&quot;updated_at&quot;:&quot;2012-10-31T13:39:23+00:00&quot;,&quot;user_id&quot;:3},{&quot;conference_id&quot;:146,&quot;contact_email&quot;:&quot;anas.zebzabi@o2.com&quot;,&quot;created_at&quot;:&quot;2012-10-31T13:39:23+00:00&quot;,&quot;id&quot;:552,&quot;msisdn&quot;:&quot;447715201875&quot;,&quot;nickname&quot;:&quot;Anas&quot;,&quot;state&quot;:&quot;hungup&quot;,&quot;updated_at&quot;:&quot;2012-10-31T13:42:44+00:00&quot;,&quot;user_id&quot;:9},{&quot;conference_id&quot;:146,&quot;contact_email&quot;:&quot;seanholden1@gmail.com&quot;,&quot;created_at&quot;:&quot;2012-10-31T13:39:23+00:00&quot;,&quot;id&quot;:555,&quot;msisdn&quot;:&quot;447718188620&quot;,&quot;nickname&quot;:&quot;Sean Holden 2&quot;,&quot;state&quot;:&quot;hungup&quot;,&quot;updated_at&quot;:&quot;2012-10-31T13:42:54+00:00&quot;,&quot;user_id&quot;:null},{&quot;conference_id&quot;:146,&quot;contact_email&quot;:&quot;nicholas.lyne@o2.com&quot;,&quot;created_at&quot;:&quot;2012-10-31T13:38:01+00:00&quot;,&quot;id&quot;:551,&quot;msisdn&quot;:&quot;447718188864&quot;,&quot;nickname&quot;:&quot;Nicholas Lyne&quot;,&quot;state&quot;:&quot;hungup&quot;,&quot;updated_at&quot;:&quot;2012-10-31T13:43:04+00:00&quot;,&quot;user_id&quot;:5},{&quot;conference_id&quot;:146,&quot;contact_email&quot;:&quot;sean.holden@o2.com&quot;,&quot;created_at&quot;:&quot;2012-10-31T13:39:23+00:00&quot;,&quot;id&quot;:554,&quot;msisdn&quot;:&quot;447812454885&quot;,&quot;nickname&quot;:&quot;Sean Holden 1&quot;,&quot;state&quot;:&quot;hungup&quot;,&quot;updated_at&quot;:&quot;2012-10-31T13:43:05+00:00&quot;,&quot;user_id&quot;:null},{&quot;conference_id&quot;:146,&quot;contact_email&quot;:&quot;ben@emson.co.uk&quot;,&quot;created_at&quot;:&quot;2012-10-31T13:08:54+00:00&quot;,&quot;id&quot;:549,&quot;msisdn&quot;:&quot;447730532404&quot;,&quot;nickname&quot;:&quot;Ben Emson&quot;,&quot;state&quot;:&quot;hungup&quot;,&quot;updated_at&quot;:&quot;2012-10-31T13:43:11+00:00&quot;,&quot;user_id&quot;:1}]" id="participant_collection"></div>
+
+  <section id='conference-page' class='main-content'>
+
+    <nav class="breadcrumbs">
+      <a href="/conferences">Dashboard</a>
+      <span>Please dial in</span>
+    </nav>
+
+    <section id='conf-info' class="call-completed">
+      <article>
+        <header>
+          <h2 id='conference_name'  > Please dial in </h2>
+
+            <time>
+                Wednesday 31st October, 13:37pm
+            </time>
+
+        </header>
+         <p id='conference_agenda'  > Test</p>
+      </article>
+      <aside>
+        <p>
+          <span class="tel">+442035145919</span>
+          <span class="call-status">Completed
+          </span>
+        </p>
+          <div class="button featured-cta">Archive</div>
+      </aside>
+    </section>
+
+
+    <ul id='participants'>
+      <li class="status-pending vcard", id="7715202085">
+        <figure>
+          <img class="photo" src="http://robohash.org/7715202085.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'>Karl Turner:</span>
+            <span class='status'>[pending]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span>Karl Turner</span></li>
+          <li class="tel"><span>447715202085</span></li>
+          <li class="email"><span>karl.turner@o2.com</span></li>
+          <li class="linkedin"><a href="" title="View Karl Turner's profile on LinkedIn" rel="external">Karl Turner on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Karl Turner's profile on Facebook" rel="external">Karl Turner on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Karl Turner on Twitter" rel="external">Karl Turner</a></li>
+        </ul>
+      </li>
+      <li class="status-pending vcard", id="7830170512">
+        <figure>
+          <img class="photo" src="http://robohash.org/7830170512.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'>Dan Calabrese:</span>
+            <span class='status'>[pending]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span>Dan Calabrese</span></li>
+          <li class="tel"><span>447830170512</span></li>
+          <li class="email"><span>dan.calabrese@o2.com</span></li>
+          <li class="linkedin"><a href="" title="View Dan Calabrese's profile on LinkedIn" rel="external">Dan Calabrese on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Dan Calabrese's profile on Facebook" rel="external">Dan Calabrese on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Dan Calabrese on Twitter" rel="external">Dan Calabrese</a></li>
+        </ul>
+      </li>
+      <li class="status-pending vcard", id="7718189019">
+        <figure>
+          <img class="photo" src="http://robohash.org/7718189019.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'>Daniel Payne:</span>
+            <span class='status'>[pending]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span>Daniel Payne</span></li>
+          <li class="tel"><span>447718189019</span></li>
+          <li class="email"><span>daniel.payne@o2.com</span></li>
+          <li class="linkedin"><a href="" title="View Daniel Payne's profile on LinkedIn" rel="external">Daniel Payne on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Daniel Payne's profile on Facebook" rel="external">Daniel Payne on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Daniel Payne on Twitter" rel="external">Daniel Payne</a></li>
+        </ul>
+      </li>
+      <li class="status-hungup vcard", id="7715201875">
+        <figure>
+          <img class="photo" src="http://robohash.org/7715201875.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'>Anas:</span>
+            <span class='status'>[hungup]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span>Anas</span></li>
+          <li class="tel"><span>447715201875</span></li>
+          <li class="email"><span>anas.zebzabi@o2.com</span></li>
+          <li class="linkedin"><a href="" title="View Anas's profile on LinkedIn" rel="external">Anas on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Anas's profile on Facebook" rel="external">Anas on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Anas on Twitter" rel="external">Anas</a></li>
+        </ul>
+      </li>
+      <li class="status-hungup vcard", id="7718188620">
+        <figure>
+          <img class="photo" src="http://robohash.org/7718188620.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'>Sean Holden 2:</span>
+            <span class='status'>[hungup]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span>Sean Holden 2</span></li>
+          <li class="tel"><span>447718188620</span></li>
+          <li class="email"><span>seanholden1@gmail.com</span></li>
+          <li class="linkedin"><a href="" title="View Sean Holden 2's profile on LinkedIn" rel="external">Sean Holden 2 on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Sean Holden 2's profile on Facebook" rel="external">Sean Holden 2 on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Sean Holden 2 on Twitter" rel="external">Sean Holden 2</a></li>
+        </ul>
+      </li>
+      <li class="status-hungup vcard", id="7718188864">
+        <figure>
+          <img class="photo" src="http://robohash.org/7718188864.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'>Nicholas Lyne:</span>
+            <span class='status'>[hungup]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span>Nicholas Lyne</span></li>
+          <li class="tel"><span>447718188864</span></li>
+          <li class="email"><span>nicholas.lyne@o2.com</span></li>
+          <li class="linkedin"><a href="" title="View Nicholas Lyne's profile on LinkedIn" rel="external">Nicholas Lyne on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Nicholas Lyne's profile on Facebook" rel="external">Nicholas Lyne on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Nicholas Lyne on Twitter" rel="external">Nicholas Lyne</a></li>
+        </ul>
+      </li>
+      <li class="status-hungup vcard", id="7812454885">
+        <figure>
+          <img class="photo" src="http://robohash.org/7812454885.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'>Sean Holden 1:</span>
+            <span class='status'>[hungup]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span>Sean Holden 1</span></li>
+          <li class="tel"><span>447812454885</span></li>
+          <li class="email"><span>sean.holden@o2.com</span></li>
+          <li class="linkedin"><a href="" title="View Sean Holden 1's profile on LinkedIn" rel="external">Sean Holden 1 on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Sean Holden 1's profile on Facebook" rel="external">Sean Holden 1 on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Sean Holden 1 on Twitter" rel="external">Sean Holden 1</a></li>
+        </ul>
+      </li>
+      <li class="status-hungup vcard", id="7730532404">
+        <figure>
+          <img class="photo" src="http://robohash.org/7730532404.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'>Ben Emson:</span>
+            <span class='status'>[hungup]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span>Ben Emson</span></li>
+          <li class="tel"><span>447730532404</span></li>
+          <li class="email"><span>ben@emson.co.uk</span></li>
+          <li class="linkedin"><a href="" title="View Ben Emson's profile on LinkedIn" rel="external">Ben Emson on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Ben Emson's profile on Facebook" rel="external">Ben Emson on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Ben Emson on Twitter" rel="external">Ben Emson</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ol id="steps">
+      <li class=active>
+        <p>Click to edit title, time &amp; agenda.</p>
+      </li>
+      <li class=>
+        <p>Click to add participants to your conference.</p>
+      </li>
+      <li class=>
+        <p>Click to send an invite to your participants.</p>
+      </li>
+    </ol>
+
+  </section>
+
+   <footer>
+      <div class="wrapper">
+           <a href="http://thelab.o2.com/">The Lab</a>
+           <p>&copy; copyright Telefonica</p>
+       </div>
+   </footer>
+</body>
+</html>
+
+
