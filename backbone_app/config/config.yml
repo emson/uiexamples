@@ -1,0 +1,4 @@
+development:
+  logger: 'log/backbone_app.log'
+
+

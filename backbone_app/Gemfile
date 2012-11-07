@@ -1,0 +1,23 @@
+source "http://rubygems.org"
+
+gem "rack"
+gem "rake"
+gem "sinatra", :require => 'sinatra/base'
+gem "sinatra-contrib"
+gem "json"
+gem 'sprockets'
+gem 'pusher'
+
+gem 'rb-readline'
+gem 'pry'
+
+group :development do
+  gem 'pry-nav'
+  gem 'pry-doc'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'rack-test'
+end
+
