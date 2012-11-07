@@ -6,6 +6,7 @@ class App < Sinatra::Base
 
   # setup and configure the sprocket assets pipeline
   set :assets, Sprockets::Environment.new
+  settings.assets.append_path('vendor/assets/javascripts')
   settings.assets.append_path('app/assets/javascripts')
   settings.assets.append_path('app/assets/stylesheets')
 
@@ -13,12 +14,12 @@ class App < Sinatra::Base
     erb :index
   end
 
-  get '/stylesheets/:file.css' do
+  get '/assets/stylesheets/:file.css' do
     content_type 'text/css'
     settings.assets["#{params[:file]}.css"]
   end
 
-  get '/javascripts/:file.js' do
+  get '/assets/javascripts/:file.js' do
     content_type 'application/javascript'
     settings.assets["#{params[:file]}.js"]
   end
