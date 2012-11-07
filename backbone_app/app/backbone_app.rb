@@ -4,6 +4,7 @@ Bundler.require(:default)
 require 'sinatra'
 require 'json'
 require 'logger'
+require 'sprockets'
 require 'pusher'
 
 if development?
