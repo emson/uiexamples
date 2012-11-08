@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en-english">
+    <meta name="author" content="Ruth John">
+    <meta name="copyright" content="The Lab, O2 Telefónica, 2012">
+    <meta name="keywords" content="conference, call">
+    <meta name="description" content="Elegant conference calling">
+    <title>BrijTalk: Elegant conferencing calling.</title>
+    <link rel="icon" href="/favicon1.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon1.ico" type="image/x-icon" />
+    <link href="/assets/application.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header role="banner">
+    <div class="wrapper">
+      <h1><a href="/">BrijTalk</a></h1>
+      <nav>
+        <a href="/conferences">Dashboard</a>
+        <a href="/contacts">| Contacts</a>
+      </nav>
+      <p class="logged-in"><span>Hello Ben Emson </span><a href="/users/sign_out" data-method="delete" rel="nofollow">Log Out</a></p>
+    </div>
+  </header>
+
+  <div data-conference-call-id="61ab8624f2d8cd26e1ec73d55fac2a73" data-participants=<%= @participants %> id="participant_collection"></div>
+
+  <section id='conference-page' class='main-content'>
+
+    <nav class="breadcrumbs">
+      <a href="/conferences">Dashboard</a>
+      <span>Please dial in</span>
+    </nav>
+
+    <section id='conf-info' class="call-completed">
+      <article>
+        <header>
+          <h2 id='conference_name'  > Please dial in </h2>
+
+            <time>
+                Wednesday 31st October, 13:37pm
+            </time>
+
+        </header>
+         <p id='conference_agenda'  > Test</p>
+      </article>
+      <aside>
+        <p>
+          <span class="tel">+442035145919</span>
+          <span class="call-status">Completed
+          </span>
+        </p>
+          <div class="button featured-cta">Archive</div>
+      </aside>
+    </section>
+
+
+  <div id="container"> loading ....</div>
+    <ul id='participants'>
+      <% @participants.each do |participant| %>
+      <li class="status-pending vcard", id=<%=participant.msisdn %>>
+        <figure>
+          <img class="photo" src="http://robohash.org/<%= participant.msisdn %>.jpg?size=150x170&bgset=bg2" alt="" />
+          <figcaption class="nickname">
+            <span class='nickname'><%= participant.nickname %>:</span>
+            <span class='status'>[<%= participant.state %>]</span>
+          </figcaption>
+        </figure>
+        <ul>
+          <li class="fn"><span><%= participant.nickname %></span></li>
+          <li class="tel"><span><%= participant.msisdn %></span></li>
+          <li class="email"><span><%= participant.contact_email %></span></li>
+          <li class="linkedin"><a href="" title="View Karl Turner's profile on LinkedIn" rel="external">Karl Turner on LinkedIn</a></li>
+          <li class="facebook"><a href="" title="View Karl Turner's profile on Facebook" rel="external">Karl Turner on Facebook</a></li>
+          <li class="twitter"><a href="" title="View Karl Turner on Twitter" rel="external">Karl Turner</a></li>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+    <ol id="steps">
+      <li class=active>
+        <p>Click to edit title, time &amp; agenda.</p>
+      </li>
+      <li class=>
+        <p>Click to add participants to your conference.</p>
+      </li>
+      <li class=>
+        <p>Click to send an invite to your participants.</p>
+      </li>
+    </ol>
+
+  </section>
+
+   <footer>
+      <div class="wrapper">
+           <a href="http://thelab.o2.com/">The Lab</a>
+           <p>&copy; copyright Telefonica</p>
+       </div>
+   </footer>
+</body>
+
+    <script src="/assets/application.js" type="text/javascript"></script>
+    <script src="/assets/brijtalk.js" type="text/javascript"></script>
+    <script src="http://js.pusher.com/1.12/pusher.min.js" type="text/javascript"></script>
+</html>
+
+
