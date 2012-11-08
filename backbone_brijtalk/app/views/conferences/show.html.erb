@@ -26,7 +26,8 @@
     </div>
   </header>
 
-  <div data-conference-call-id="61ab8624f2d8cd26e1ec73d55fac2a73" data-participants=<%= @participants %> id="participant_collection"></div>
+  <%= content_tag "div", "", id: 'participant_collection', data: { participants: @participants, conference: @conference} %>
+
 
   <section id='conference-page' class='main-content'>
 
@@ -57,29 +58,10 @@
       </aside>
     </section>
 
+    <div id='content'>
+      loading......
+    </div>
 
-  <div id="container"> loading ....</div>
-    <ul id='participants'>
-      <% @participants.each do |participant| %>
-      <li class="status-pending vcard", id=<%=participant.msisdn %>>
-        <figure>
-          <img class="photo" src="http://robohash.org/<%= participant.msisdn %>.jpg?size=150x170&bgset=bg2" alt="" />
-          <figcaption class="nickname">
-            <span class='nickname'><%= participant.nickname %>:</span>
-            <span class='status'>[<%= participant.state %>]</span>
-          </figcaption>
-        </figure>
-        <ul>
-          <li class="fn"><span><%= participant.nickname %></span></li>
-          <li class="tel"><span><%= participant.msisdn %></span></li>
-          <li class="email"><span><%= participant.contact_email %></span></li>
-          <li class="linkedin"><a href="" title="View Karl Turner's profile on LinkedIn" rel="external">Karl Turner on LinkedIn</a></li>
-          <li class="facebook"><a href="" title="View Karl Turner's profile on Facebook" rel="external">Karl Turner on Facebook</a></li>
-          <li class="twitter"><a href="" title="View Karl Turner on Twitter" rel="external">Karl Turner</a></li>
-        </ul>
-      </li>
-      <% end %>
-    </ul>
     <ol id="steps">
       <li class=active>
         <p>Click to edit title, time &amp; agenda.</p>
