@@ -7,7 +7,7 @@ window.Brijtalk = {
   Routers: {},
   init: function() {
     Brijtalk.App = new Brijtalk.Routers.ConferenceApp;
-    // Backbone.history.start();
+    Backbone.history.start();
   }
 };
 

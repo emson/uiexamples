@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="content-language" content="en-english">
-    <meta name="author" content="Ruth John">
-    <meta name="copyright" content="The Lab, O2 Telefónica, 2012">
-    <meta name="keywords" content="conference, call">
-    <meta name="description" content="Elegant conference calling">
-    <title>BrijTalk: Elegant conferencing calling.</title>
-    <link rel="icon" href="/favicon1.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon1.ico" type="image/x-icon" />
-    <link href="/assets/application.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
-</head>
 
-<body>
   <header role="banner">
     <div class="wrapper">
       <h1><a href="/">BrijTalk</a></h1>
@@ -26,7 +10,7 @@
     </div>
   </header>
 
-  <div data-conference-call-id="61ab8624f2d8cd26e1ec73d55fac2a73" data-participants=<%= @participants %> id="participant_collection"></div>
+  <div data-conference-call-id="61ab8624f2d8cd26e1ec73d55fac2a73" data-participants=<%= @participants.to_json %> id="participant_collection"></div>
 
   <section id='conference-page' class='main-content'>
 
@@ -100,11 +84,5 @@
            <p>&copy; copyright Telefonica</p>
        </div>
    </footer>
-</body>
-
-    <script src="/assets/application.js" type="text/javascript"></script>
-    <script src="/assets/brijtalk.js" type="text/javascript"></script>
-    <script src="http://js.pusher.com/1.12/pusher.min.js" type="text/javascript"></script>
-</html>
 
 
