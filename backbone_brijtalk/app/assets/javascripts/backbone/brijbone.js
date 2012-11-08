@@ -5,7 +5,10 @@ var Participant = Backbone.Model.extend({});
 participant = new Participant({});
 
 //Create a model - conference from the dom data.
-var Conference = Backbone.Model.extend({});
+var Conference = Backbone.Model.extend({
+  // will need to add url here soon to post data to the model
+});
+
 conference = new Conference($('#participant_collection').data('conference') );
 
 // create a view for the model participant
@@ -30,11 +33,43 @@ var ConferenceView = Backbone.View.extend({
 
   template: JST['backbone/templates/conference_view'],
 
+  // add events to the view on click..
+  events: {
+    "click h2": "onEditable",
+    "keypress .edit": "editValue",
+  },
+
+  //this gets the current element and changes the html to allow input text.
+  onEditable: function(e){
+    var currentElement = $(e.srcElement);
+    $(currentElement).html("<input class='edit' value='"+ currentElement.text() +"'></input>");
+  },
+
+  //this will exit out of the input field (soon.....)
+  editValue: function(e){
+    var keyCode = e.keyCode;    
+    // this magically keeps the model data ... ere be dragons!
+    if(keyCode === 13){
+      newValue = ($('.edit').val());
+      this.model.set('name', newValue);
+      this.model.url = '/conferences/1';
+      console.log(this.model);
+      // this puts a request to the model
+      this.model.save();
+    }
+  },
+
+ // will need to implement this above...
+  exitEdit: function(e){
+    text = $('.edit').val();
+    $('.edit').html("<h2 id='conference_name'>" + text + "</h2>");
+  },
+
   render: function(){
     var attributes = this.model.toJSON();
     this.$el.html(this.template(attributes));
     return this;
-  }
+  },
 });
 
 
@@ -74,7 +109,7 @@ var conferenceview = new ConferenceView({model: conference});
 conferenceview.render();
 
 //log the conference view
-console.log(conferenceview.el)
+// console.log(conferenceview.el)
 
 // append or replace to the dom element
 $('#conf-info').replaceWith(conferenceview.el)
