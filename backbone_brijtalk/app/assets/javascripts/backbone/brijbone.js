@@ -42,7 +42,14 @@ var ConferenceView = Backbone.View.extend({
   //this gets the current element and changes the html to allow input text.
   onEditable: function(e){
     var currentElement = $(e.srcElement);
-    $(currentElement).html("<input class='edit' id='"+ e.srcElement.id +"' value='"+ currentElement.text() +"'></input>");
+    // add if statement to check for datepicker.
+    if (e.srcElement.id === "conference_date"){
+      $(currentElement).html("<input class='edit' id='datepicker' value='"+ currentElement.text() +"'></input>");
+      // adding datepicker
+      $( "#datepicker" ).datepicker({ dateFormat: 'DD dd MM yy,' });
+    } else {
+      $(currentElement).html("<input class='edit' id='"+ e.srcElement.id +"' value='"+ currentElement.text() +"'></input>");
+    }
   },
 
   //this will exit out of the input field and set the correct value.
@@ -57,9 +64,12 @@ var ConferenceView = Backbone.View.extend({
       if(e.srcElement.id == "conference_name"){
         // sets the model name.
         this.model.set('name', newValue);
-      }else {
+      }else if(e.srcElement.id == "datepicker") {
         // sets the model agenda.
-        this.model.set('agenda', newValue);
+        this.model.set('start', newValue);
+      }else if(e.srcElement.id == "agenda") {
+        // sets the model agenda.
+        this.model.set('conference_agenda', newValue);
       }
 
       //puts to rails server with correct id.
