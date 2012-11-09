@@ -10,7 +10,7 @@
     </div>
   </header>
 
-  <%= content_tag "div", "", id: 'participant_collection', data: { participants: @participants } %>
+  <%= content_tag "div", "", id: 'page_data', data: { participants: @participants, conference: @conference} %>
 
   <section id='conference-page' class='main-content'>
 

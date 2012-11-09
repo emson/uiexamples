@@ -12,7 +12,6 @@ Brijtalk.Views.ParticipantsIndex = Backbone.View.extend({
   },
 
   addOne: function(participant) {
-    console.log(participant);
     var view = new Brijtalk.Views.Participant({ model: participant });
     this.$el.append(view.render().el);
   },
