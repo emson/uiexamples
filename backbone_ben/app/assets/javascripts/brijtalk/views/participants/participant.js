@@ -21,15 +21,14 @@ Brijtalk.Views.Participant= Backbone.View.extend({
   clickAction: function(e) {
     console.log(e);
     target = e.currentTarget;
-    console.log(target);
+    // bonsai animation
     bonsai.run(target, {
       code: function() {
-        new Rect(10,10,100,100)
-          .addTo(stage)
-          .attr('fillColor', 'green');
+        // new Rect(0,-60,100,100)
+        new Bitmap("http://robohash.org/447715202085.jpg?size=150x170&bgset=bg2").on('load', function() {
+          this.addTo(stage);
+        }).animate('1s', {x:10, y:10}, {easing: 'bounceIn', delay: '100ms'});
       },
-      width: 500,
-      height: 400,
     });
   },
 
