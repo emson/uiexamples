@@ -20,10 +20,8 @@ Brijtalk.Views.Participant= Backbone.View.extend({
       code: function() {
         new Bitmap("http://robohash.org/447715202085.jpg?size=150x170&bgset=bg2").on('load', function() {
           this.addTo(stage);
-        }).animate('1s', {x:10, y:10}, {easing: 'bounceIn', delay: '100ms'});
+        }).animate('1s', {x:0, y:20}, {easing: 'elasticOut'});
       },
-    width: 500,
-    height: 300
     });
     return this;
   },
