@@ -28,7 +28,7 @@ var ParticipantView = Backbone.View.extend({
 });
 
 
-// create a view for the model Conference
+// create a view for the model Conference and add extra functions to edit certain fields.
 var ConferenceView = Backbone.View.extend({
 
   template: JST['backbone/templates/conference_view'],
@@ -56,13 +56,16 @@ var ConferenceView = Backbone.View.extend({
       console.log(this.model);
       // this puts a request to the model
       this.model.save();
+
+      //exit the edit box
+      this.exitEdit();
     }
   },
 
- // will need to implement this above...
+ // this exits the text box and replaces the value with the correct string ...
   exitEdit: function(e){
     text = $('.edit').val();
-    $('.edit').html("<h2 id='conference_name'>" + text + "</h2>");
+    $('.edit').replaceWith(text);
   },
 
   render: function(){
