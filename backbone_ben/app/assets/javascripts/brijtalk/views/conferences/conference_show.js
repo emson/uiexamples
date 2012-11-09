@@ -1,14 +1,18 @@
 Brijtalk.Views.ConferencesShow = Backbone.View.extend({
-  templates: JST['conferences/conferences_show'],
+  template: JST['brijtalk/templates/conferences/conferences_show'],
 
   events: {
   },
 
   initialize: function() {
-    Brijtalk.participats = new Brijtalk.Collections.Participants;
+    Brijtalk.participants = new Brijtalk.Collections.Participants;
   },
 
   render: function() {
+    console.log();
+    this.$el.html( this.template({}) );
+    // console.log(this.$el);
+    return this;
   },
 
 });
