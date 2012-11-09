@@ -22,6 +22,7 @@ Brijtalk.Views.Participant= Backbone.View.extend({
           this.addTo(stage);
         }).animate('1s', {x:0, y:20}, {easing: 'elasticOut'});
       },
+      height: 210,
     });
     return this;
   },
@@ -29,6 +30,7 @@ Brijtalk.Views.Participant= Backbone.View.extend({
   clickAction: function(e) {
     console.log(e);
     target = e.currentTarget;
+    this.render();
   },
 
 });
