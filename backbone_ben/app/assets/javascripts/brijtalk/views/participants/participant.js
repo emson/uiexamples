@@ -20,6 +20,8 @@ Brijtalk.Views.Participant= Backbone.View.extend({
   
   clickAction: function(e) {
     console.log(e);
+    target = e.currentTarget;
+    console.log(target);
   },
 
 });
