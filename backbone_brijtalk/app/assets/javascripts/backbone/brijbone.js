@@ -67,9 +67,9 @@ var ConferenceView = Backbone.View.extend({
       }else if(e.srcElement.id == "datepicker") {
         // sets the model agenda.
         this.model.set('start', newValue);
-      }else if(e.srcElement.id == "agenda") {
+      }else if(e.srcElement.id == "conference_agenda") {
         // sets the model agenda.
-        this.model.set('conference_agenda', newValue);
+        this.model.set('agenda', newValue);
       }
 
       //puts to rails server with correct id.
