@@ -42,7 +42,7 @@ var ConferenceView = Backbone.View.extend({
   //this gets the current element and changes the html to allow input text.
   onEditable: function(e){
     var currentElement = $(e.srcElement);
-    $(currentElement).html("<input class='edit' value='"+ currentElement.text() +"'></input>");
+    $(currentElement).html("<input class='edit' id='"+ e.srcElement.id +"' value='"+ currentElement.text() +"'></input>");
   },
 
   //this will exit out of the input field and set the correct value.
@@ -53,8 +53,14 @@ var ConferenceView = Backbone.View.extend({
     if(keyCode === 13){
       newValue = ($('.edit').val());
 
-      // sets the model name.
-      this.model.set('name', newValue);
+      // adding an if statement here to grab the correct element.
+      if(e.srcElement.id == "conference_name"){
+        // sets the model name.
+        this.model.set('name', newValue);
+      }else {
+        // sets the model agenda.
+        this.model.set('agenda', newValue);
+      }
 
       //puts to rails server with correct id.
       this.model.url = '/conferences/' + this.model.id;
