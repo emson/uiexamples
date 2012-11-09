@@ -7,6 +7,14 @@ class ConferencesController < ApplicationController
     @conference[:start] = format_date_user_friendly(conference)
   end
 
+  def update
+    @conference = Conference.find(params[:id])
+    @conference.update_attributes(params[:conference])
+    respond_to do |format|
+      format.json {render json: @conference}
+    end
+  end
+
   private
 
   def format_date_user_friendly(conference)
