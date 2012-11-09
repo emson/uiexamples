@@ -45,15 +45,20 @@ var ConferenceView = Backbone.View.extend({
     $(currentElement).html("<input class='edit' value='"+ currentElement.text() +"'></input>");
   },
 
-  //this will exit out of the input field (soon.....)
+  //this will exit out of the input field and set the correct value.
   editValue: function(e){
+    // grab the correct key code (enter in this case)
     var keyCode = e.keyCode;    
     // this magically keeps the model data ... ere be dragons!
     if(keyCode === 13){
       newValue = ($('.edit').val());
+
+      // sets the model name.
       this.model.set('name', newValue);
-      this.model.url = '/conferences/1';
-      console.log(this.model);
+
+      //puts to rails server with correct id.
+      this.model.url = '/conferences/' + this.model.id;
+
       // this puts a request to the model
       this.model.save();
 
