@@ -35,7 +35,7 @@ var ConferenceView = Backbone.View.extend({
 
   // add events to the view on click..
   events: {
-    "click h2": "onEditable",
+    "click .editable": "onEditable",
     "keypress .edit": "editValue",
   },
 
