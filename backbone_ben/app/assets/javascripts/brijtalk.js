@@ -11,7 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require ./brijtalk/brijtalk
-//= require_tree ./brijtalk/initializers
 //= require_tree ./brijtalk/templates
 //= require_tree ./brijtalk/models
 //= require_tree ./brijtalk/collections
