@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
-//= require bonsai
 //= require brijtalk
 //= require_tree .

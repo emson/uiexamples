@@ -396,55 +396,49 @@ input#conference_agenda {margin-top:10px; width:100%;}
 #conf-info article p:after {font-size:1.6em;line-height:1em;}
 
 
-#participants {overflow:hidden; padding:20px 20px;}
-#participants > li {
-    @include featuredcontent;
-    width:200px; float:left; margin:0px 40px 40px 0px; padding-left:10px;
-    box-sizing:border-box;}
-#participants > li:nth-child(4n) {margin-right:0px;}
-#participants figure, #participants ul {float:left;}
-#participants figure {position:relative; border-right:1px solid $mid;}
-#participants figure figcaption {
-    position:absolute; bottom:0px; left:0px; width:100%; padding:8px 0px; box-sizing:border-box;
-    background-color: $superdark;
-    @include lighttext; text-align:center; font-size:1.4em;
-}
-#participants ul > li {padding:4px 8px; position:relative; border-top:1px solid $white; border-bottom:1px solid $mid;}
-#participants ul > li:before {
-    font-family:'symbols-icons';
-    text-align:center; line-height:1em; font-size:1.8em;
-    width:1.2em; display:inline-block; content:$user; cursor:pointer;
-}
-#participants ul > li.tel:before {content:$phone;}
-#participants ul > li.email:before {content:$mail;}
-#participants ul > li.linkedin:before {content:$linkedin;}
-#participants ul > li.facebook:before {content:$facebook;}
-#participants ul > li.twitter:before {content:$twitter;}
 
-#participants ul > li > span {
-    display:none; width:150px; padding:4px;
-    position:absolute; top:15px; left:15px; z-index:30;
-    background-color:$superdark; @include lighttext; text-align:center;
-    font-size:1.4em;
+#participants > li {
+    width:150px; 
+    float:left; 
+    margin:0px 40px 40px 0px;
 }
-#participants ul > li:hover > span {display:block;}
 
 #participants ul > li > a {display:none;}
+#participants figure, #participants ul {float:left;}
+#participants figure {position:relative; 
+    border-right:1px;
+    border-radius: 10px;
+    animation: flipInY 1s ease-in-out;
+    -moz-animation: flipInY 1s ease-in-out;
+    -webkit-animation: flipInY 1s ease-in-out;
+    }
 
-#steps {}
-#steps li {
-    position:absolute; top:75px; left:-180px;
-    width:119px; height:62px; padding:10px 30px 0px;
-    background:transparent url('step.png') no-repeat left top;
-    opacity:0.4;
+#participants figure figcaption {
+    bottom:0px; left:0px; width:100%; padding:8px 0px; box-sizing:border-box;
+    background-color: $superdark;
+    @include lighttext; text-align:center; font-size:1.4em;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
 }
-#steps li.active {opacity:1;}
-#steps li:before {content:'1'; font-size:2em; @include darktext; position:absolute; top:22px; left:14px;}
-#steps li:nth-child(2) {top:250px; padding:2px 30px 8px;}
-#steps li:nth-child(2):before {content:'2';}
-#steps li:nth-child(3) {top:130px; left:640px;}
-#steps li:nth-child(3):before {content:'3';}
-#steps li p {font-size:1.2em; color:$dark; text-shadow:none;}
+
+.photo{
+  border-top-right-radius:10px;
+  border-top-left-radius:10px;
+}
+
+#image_frame{
+  position: relative;
+}
+
+#image_frame #info { 
+  display: none;
+  width:100%; padding:8px 0px; box-sizing:border-box;
+  background-color: $superdark;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
 
 /*datetime picker */
 
@@ -463,35 +457,6 @@ input#conference_agenda {margin-top:10px; width:100%;}
 
 
 
-/*different status'*/
-/*call-draft = grey, 
-call-pending = blue, 
-call-oncall = green, 
-call-cancelled = red, 
-call-completed = pink, 
-call-archived = purple
-
-status-pending = blue
-status-oncall = green
-status-offline = red
-you
-chairman
-*/
-/*borders*/
-.call-draft aside, .status-draft {@include rightborder($translight,$dark,$mid,$light);}
-.call-pending aside, .status-pending {@include rightborder($translight,$purple,$blue,$turquoise);}
-.call-oncall aside, .status-active, .status-talking {@include rightborder($translight,$turquoise,$green,$yellow);}
-.call-cancelled aside, .status-hungup {@include rightborder($translight,$pink,$red,$orange);}
-.call-completed aside {@include rightborder($translight,$purple,$pink,$blue);}
-.call-archived aside {@include rightborder($translight,$blue,$purple,$pink);}
-
-
-
-/*participant list icons*/
-.status-oncall ul > li:before, .status-talking ul > li:before {color:$green;}
-.status-offline  ul > li:before {color:$pink;}
-.status-pending  ul > li:before {color:$blue;}
-
 .delete {visibility:hidden;}
 .delete:before {
     font-family:'symbols-icons';
@@ -502,3 +467,95 @@ chairman
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #grid {position:absolute; top:0px; left:50%; height:100%; width:100%; background:transparent url('../12_col.png') repeat-y top left; margin-left:-490px;}
+
+
+
+
+/*==========Karl be playing here==========================*/
+
+@-webkit-keyframes flipInY {
+    0% {
+        -webkit-transform: perspective(400px) rotateY(90deg);
+        opacity: 0;
+    }
+    
+    40% {
+        -webkit-transform: perspective(400px) rotateY(-10deg);
+    }
+    
+    70% {
+        -webkit-transform: perspective(400px) rotateY(10deg);
+    }
+    
+    100% {
+        -webkit-transform: perspective(400px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+@-moz-keyframes flipInY {
+    0% {
+        -moz-transform: perspective(400px) rotateY(90deg);
+        opacity: 0;
+    }
+    
+    40% {
+        -moz-transform: perspective(400px) rotateY(-10deg);
+    }
+    
+    70% {
+        -moz-transform: perspective(400px) rotateY(10deg);
+    }
+    
+    100% {
+        -moz-transform: perspective(400px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+@-o-keyframes flipInY {
+    0% {
+        -o-transform: perspective(400px) rotateY(90deg);
+        opacity: 0;
+    }
+    
+    40% {
+        -o-transform: perspective(400px) rotateY(-10deg);
+    }
+    
+    70% {
+        -o-transform: perspective(400px) rotateY(10deg);
+    }
+    
+    100% {
+        -o-transform: perspective(400px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+@keyframes flipInY {
+    0% {
+        transform: perspective(400px) rotateY(90deg);
+        opacity: 0;
+    }
+    
+    40% {
+        transform: perspective(400px) rotateY(-10deg);
+    }
+    
+    70% {
+        transform: perspective(400px) rotateY(10deg);
+    }
+    
+    100% {
+        transform: perspective(400px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
