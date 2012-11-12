@@ -1,0 +1,1211 @@
+/*
+CONTENTS
+
+1. Reset and default style
+2. Site structure
+3. Generic styling and page layout (that's not in 1.)
+4. Page specifics
+*/
+/*Font family declaration*/
+@font-face {
+  font-family: 'KameronRegular';
+  src: url("fonts/Kameron-Regular-webfont.eot");
+  src: url("fonts/Kameron-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Kameron-Regular-webfont.woff") format("woff"), url("fonts/Kameron-Regular-webfont.ttf") format("truetype"), url("fonts/Kameron-Regular-webfont.svg#KameronRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KameronBold';
+  src: url("fonts/Kameron-Bold-webfont.eot");
+  src: url("fonts/Kameron-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Kameron-Bold-webfont.woff") format("woff"), url("fonts/Kameron-Bold-webfont.ttf") format("truetype"), url("fonts/Kameron-Bold-webfont.svg#KameronBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'symbols-icons';
+  src: url("fonts/symbols-icons.eot");
+  src: url("fonts/symbols-icons.eot?#iefix") format("embedded-opentype"), url("fonts/symbols-icons.woff") format("woff"), url("fonts/symbols-icons.ttf") format("truetype"), url("fonts/symbols-icons.svg#symbols-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*COLOURS*/
+/*ICONS*/
+/*EFFECTS*/
+/* line 97, ../../app/assets/stylesheets/brijtalk.css.scss */
+.featured-content-header, th, button, .button, input[type="submit"], button:hover, .button:hover, input[type="submit"]:hover, .featured-cta, input.featured-cta, .featured-cta:hover, input.featured-cta:hover, .lightbox .close, .lightbox .close:hover, .lightbox .next, .lightbox .next:hover, .feature header {
+  text-transform: uppercase;
+}
+
+/*1. RESET AND INITIAL STYLE--------------------------------------------------------*/
+/* line 143, ../../app/assets/stylesheets/brijtalk.css.scss */
+html, body, div, span, applet, object, iframe,
+header, hgroup, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, time,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, textarea, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+section, article, canvas, nav, footer, aside, figure {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: normal;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* line 157, ../../app/assets/stylesheets/brijtalk.css.scss */
+section, header, article, hgroup {
+  display: block;
+}
+
+/* line 159, ../../app/assets/stylesheets/brijtalk.css.scss */
+html {
+  background: #efefef;
+}
+
+/* line 164, ../../app/assets/stylesheets/brijtalk.css.scss */
+body {
+  font-size: 62.5%;
+  line-height: 1;
+  color: rgba(12, 13, 13, 0.8);
+  text-shadow: 1px 1px 0px white;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  background: -webkit-radial-gradient(50% 30%, circle closest-corner, rgba(242, 242, 243, 0.95) 0%, rgba(215, 217, 219, 0.8) 100%), -webkit-linear-gradient(left, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 51%), -webkit-radial-gradient(50% 50%, circle, rgba(228, 229, 231, 0.6) 0%, rgba(201, 204, 207, 0.6) 100%);
+  background-size: cover, 10px, 6px 6px;
+}
+
+/* remember to define focus styles! */
+/* line 175, ../../app/assets/stylesheets/brijtalk.css.scss */
+:focus {
+  outline: 0;
+}
+
+/*text styling*/
+/* line 178, ../../app/assets/stylesheets/brijtalk.css.scss */
+p {
+  font-size: 1.4em;
+  line-height: 1.4;
+  margin: 10px 0px;
+}
+
+/* line 179, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lede {
+  font-size: 120%;
+}
+
+/* line 180, ../../app/assets/stylesheets/brijtalk.css.scss */
+p.lede {
+  font-size: 1.7em;
+}
+
+/* line 181, ../../app/assets/stylesheets/brijtalk.css.scss */
+strong, b {
+  font-weight: bold;
+}
+
+/* line 182, ../../app/assets/stylesheets/brijtalk.css.scss */
+em, i {
+  font-style: italic;
+}
+
+/* line 183, ../../app/assets/stylesheets/brijtalk.css.scss */
+dfn, abbr {
+  border-bottom: 1px dotted #111;
+}
+
+/* line 184, ../../app/assets/stylesheets/brijtalk.css.scss */
+ins {
+  border: 1px dotted #111;
+  border-width: 0px 1px;
+  padding: 0px 3px;
+  text-decoration: none;
+  background-color: rgba(26, 26, 26, 0.1);
+}
+
+/* line 185, ../../app/assets/stylesheets/brijtalk.css.scss */
+small {
+  font-size: 92%;
+}
+
+/* line 186, ../../app/assets/stylesheets/brijtalk.css.scss */
+code {
+  background-color: rgba(173, 184, 235, 0.7);
+  font-family: monospace;
+  padding: 0px 3px;
+}
+
+/* line 187, ../../app/assets/stylesheets/brijtalk.css.scss */
+kbd {
+  font-family: monospace;
+  font-size: 1.5em;
+}
+
+/* line 188, ../../app/assets/stylesheets/brijtalk.css.scss */
+mark {
+  background-color: rgba(252, 255, 153, 0.9);
+  padding: 0px 3px;
+}
+
+/* line 189, ../../app/assets/stylesheets/brijtalk.css.scss */
+sub {
+  vertical-align: sub;
+}
+
+/* line 190, ../../app/assets/stylesheets/brijtalk.css.scss */
+sup {
+  vertical-align: super;
+}
+
+/* line 191, ../../app/assets/stylesheets/brijtalk.css.scss */
+address, time {
+  font-size: 1.4em;
+}
+
+/* line 192, ../../app/assets/stylesheets/brijtalk.css.scss */
+span.feature-text {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*lists*/
+/* line 195, ../../app/assets/stylesheets/brijtalk.css.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 196, ../../app/assets/stylesheets/brijtalk.css.scss */
+li {
+  line-height: 1.2;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 200, ../../app/assets/stylesheets/brijtalk.css.scss */
+table {
+  border-spacing: 0px 0.8em;
+  width: 100%;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+
+/* line 201, ../../app/assets/stylesheets/brijtalk.css.scss */
+caption {
+  font-size: 1.4em;
+  text-align: left;
+  text-indent: 20px;
+}
+
+/* line 202, ../../app/assets/stylesheets/brijtalk.css.scss */
+tbody tr {
+  cursor: pointer;
+}
+
+/* line 203, ../../app/assets/stylesheets/brijtalk.css.scss */
+th, td {
+  padding: 10px 20px;
+  text-align: left;
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+  margin: 3px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.4em;
+}
+
+/*quotes*/
+/* line 209, ../../app/assets/stylesheets/brijtalk.css.scss */
+blockquote:before, blockquote:after {
+  content: '"';
+}
+
+/* line 210, ../../app/assets/stylesheets/brijtalk.css.scss */
+blockquote {
+  quotes: '"';
+}
+
+/*code blocks*/
+/* line 213, ../../app/assets/stylesheets/brijtalk.css.scss */
+pre {
+  font-size: 1.4em;
+}
+
+/*headers*/
+/* line 216, ../../app/assets/stylesheets/brijtalk.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+}
+
+/* line 217, ../../app/assets/stylesheets/brijtalk.css.scss */
+h1, h2, h3 {
+  font-family: 'KameronRegular';
+}
+
+/* line 218, ../../app/assets/stylesheets/brijtalk.css.scss */
+h1 {
+  font-size: 4.8em;
+}
+
+/* line 219, ../../app/assets/stylesheets/brijtalk.css.scss */
+h2 {
+  font-size: 3.6em;
+  margin-bottom: 20px;
+}
+
+/* line 220, ../../app/assets/stylesheets/brijtalk.css.scss */
+h3 {
+  font-size: 2em;
+}
+
+/* line 221, ../../app/assets/stylesheets/brijtalk.css.scss */
+h4 {
+  font-size: 1.8em;
+}
+
+/* line 222, ../../app/assets/stylesheets/brijtalk.css.scss */
+h5 {
+  font-size: 1.6em;
+}
+
+/* line 223, ../../app/assets/stylesheets/brijtalk.css.scss */
+h6 {
+  font-size: 1.4em;
+}
+
+/*links*/
+/* line 226, ../../app/assets/stylesheets/brijtalk.css.scss */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #b04558;
+  color: #b04558;
+  font-weight: normal;
+  font-size: 1.4em;
+  -webkit-transition: color 0.3s, border 0.3s;
+}
+
+/* line 229, ../../app/assets/stylesheets/brijtalk.css.scss */
+a:hover, a:active {
+  border-bottom-color: #d88613;
+  color: #d88613;
+}
+
+/* line 230, ../../app/assets/stylesheets/brijtalk.css.scss */
+p a, h1 a, address a, li a, td a {
+  font-size: 1em;
+}
+
+/*alerts*/
+/* line 233, ../../app/assets/stylesheets/brijtalk.css.scss */
+.alert {
+  font-size: 2.5em;
+}
+
+/*forms*/
+/* line 236, ../../app/assets/stylesheets/brijtalk.css.scss */
+form {
+  padding: 20px;
+}
+
+/* line 237, ../../app/assets/stylesheets/brijtalk.css.scss */
+form.form-register {
+  width: 400px;
+}
+
+/* line 238, ../../app/assets/stylesheets/brijtalk.css.scss */
+form.form_in_place {
+  font-size: 0.7em;
+  padding: 0;
+}
+
+/* line 239, ../../app/assets/stylesheets/brijtalk.css.scss */
+.field_with_errors {
+  display: inline;
+  padding: 0;
+  color: red;
+}
+
+/* line 240, ../../app/assets/stylesheets/brijtalk.css.scss */
+#error_explanation {
+  font-family: 'KameronRegular';
+  font-size: 1.4em;
+}
+
+/* line 242, ../../app/assets/stylesheets/brijtalk.css.scss */
+fieldset {
+  overflow: hidden;
+}
+
+/* line 243, ../../app/assets/stylesheets/brijtalk.css.scss */
+legend {
+  display: none;
+}
+
+/* line 244, ../../app/assets/stylesheets/brijtalk.css.scss */
+label, input, select, textarea {
+  display: inline-block;
+}
+
+/* line 245, ../../app/assets/stylesheets/brijtalk.css.scss */
+label {
+  font-size: 1.4em;
+  text-align: right;
+  display: none;
+}
+
+/* line 246, ../../app/assets/stylesheets/brijtalk.css.scss */
+form.form-register label {
+  display: inline-block;
+  padding-right: 20px;
+  width: 120px;
+}
+
+/* line 248, ../../app/assets/stylesheets/brijtalk.css.scss */
+input, select, textarea {
+  font-family: 'KameronRegular','Times New Roman',serif;
+  font-size: 1.4em;
+  padding: 8px 8px;
+  margin: 0px 17px 20px 0px;
+  width: 220px;
+  background-color: #fcfcfc;
+  border: none;
+  border-radius: 1px;
+  box-shadow: inset 0px 0px 2px rgba(87, 91, 96, 0.9);
+  box-sizing: border-box;
+}
+
+/* line 255, ../../app/assets/stylesheets/brijtalk.css.scss */
+input.check, input[type=checkbox] {
+  width: 20px;
+}
+
+/* line 256, ../../app/assets/stylesheets/brijtalk.css.scss */
+select {
+  padding: 4px 6px;
+}
+
+/* line 257, ../../app/assets/stylesheets/brijtalk.css.scss */
+input:focus, select:focus, textarea:focus {
+  background-color: #fff;
+}
+
+/*form errors*/
+/* line 259, ../../app/assets/stylesheets/brijtalk.css.scss */
+input.input-error, select.input-error, textarea.input-error {
+  width: 354px;
+  border: 2px solid #c64039;
+  background-color: rgba(198, 64, 57, 0.2);
+}
+
+/* line 260, ../../app/assets/stylesheets/brijtalk.css.scss */
+select.input-error {
+  width: 174px;
+}
+
+/*images*/
+/*button styles*/
+/* line 266, ../../app/assets/stylesheets/brijtalk.css.scss */
+button, .button, input[type="submit"] {
+  box-shadow: 0px 0px 4px rgba(87, 91, 96, 0.9);
+  margin: 4px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #b04558;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  border: none;
+  background: -webkit-linear-gradient(120deg, white 33%, rgba(228, 229, 231, 0.9) 32%, rgba(228, 229, 231, 0.9) 66%, white 67%);
+  background-size: 3px 3px;
+}
+
+/* line 269, ../../app/assets/stylesheets/brijtalk.css.scss */
+button {
+  font-size: 1.4em;
+}
+
+/* line 270, ../../app/assets/stylesheets/brijtalk.css.scss */
+button:hover, .button:hover, input[type="submit"]:hover {
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+  margin: 3px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #d88613;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  border: none;
+  background: -webkit-linear-gradient(120deg, white 33%, rgba(228, 229, 231, 0.9) 32%, rgba(228, 229, 231, 0.9) 66%, white 67%);
+  background-size: 3px 3px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 3px rgba(87, 91, 96, 0.9);
+  padding: 8px 29px 8px 31px;
+  margin: 4px;
+}
+
+/* line 273, ../../app/assets/stylesheets/brijtalk.css.scss */
+.featured-cta, input.featured-cta {
+  box-shadow: 0px 0px 4px #9ac224;
+  margin: 4px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #9ac224;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  border: none;
+  background: -webkit-linear-gradient(120deg, white 33%, #e6f3be 32%, #e6f3be 66%, white 67%);
+  background-size: 3px 3px;
+  padding: 16px 40px;
+}
+
+/* line 277, ../../app/assets/stylesheets/brijtalk.css.scss */
+.featured-cta:hover, input.featured-cta:hover {
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+  margin: 3px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #9ac224;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  border: none;
+  background: -webkit-linear-gradient(120deg, white 33%, rgba(228, 229, 231, 0.9) 32%, rgba(228, 229, 231, 0.9) 66%, white 67%);
+  background-size: 3px 3px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 3px rgba(87, 91, 96, 0.9);
+  padding: 8px 29px 8px 31px;
+  margin: 4px;
+  padding: 16px 39px 16px 41px;
+}
+
+/*SITE STRUCTURE AND MEDIA QUERIES~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*header and footer*/
+/* line 281, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"], footer {
+  background-color: rgba(12, 13, 13, 0.8);
+  background: -webkit-linear-gradient(top, rgba(12, 13, 13, 0.8), rgba(0, 0, 0, 0.8));
+  background: -moz-linear-gradient(top, rgba(12, 13, 13, 0.8), rgba(0, 0, 0, 0.8));
+  background: -o-linear-gradient(top, rgba(12, 13, 13, 0.8), rgba(0, 0, 0, 0.8));
+  background: -ms-linear-gradient(top, rgba(12, 13, 13, 0.8), rgba(0, 0, 0, 0.8));
+  background: linear-gradient(top, rgba(12, 13, 13, 0.8), rgba(0, 0, 0, 0.8));
+  color: rgba(201, 204, 207, 0.9);
+  text-shadow: 1px 1px 0px black;
+  padding: 20px 0px;
+}
+
+/* line 293, ../../app/assets/stylesheets/brijtalk.css.scss */
+.wrapper {
+  width: 980px;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+/* line 296, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] h1,
+header[role="banner"] nav,
+header[role="banner"] form {
+  display: inline-block;
+}
+
+/* line 297, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] h1 {
+  padding-right: 30px;
+  margin-top: 10px;
+  line-height: 1;
+}
+
+/* line 299, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] a,
+footer a {
+  color: rgba(255, 255, 255, 0.9);
+  border: none;
+}
+
+/* line 300, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] nav a {
+  font-size: 2em;
+}
+
+/* line 302, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] form {
+  float: right;
+  width: 400px;
+  position: relative;
+  padding: 0px;
+}
+
+/* line 304, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] form input[type="email"],
+header[role="banner"] form input[type="password"] {
+  width: 160px;
+  margin-right: 20px;
+}
+
+/* line 305, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] form input[type="submit"] {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  padding: 8px 0px;
+  margin: 0px;
+}
+
+/* line 310, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] form label[for="remember-me"], #remember-me {
+  display: inline-block;
+  float: right;
+}
+
+/* line 312, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] p {
+  text-align: right;
+}
+
+/* line 313, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] p.logged-in {
+  float: right;
+}
+
+/* line 314, ../../app/assets/stylesheets/brijtalk.css.scss */
+header[role="banner"] p.logged-in a:before {
+  font-family: 'symbols-icons';
+  text-align: center;
+  line-height: 1em;
+  font-size: 1.4em;
+  width: 1.2em;
+  display: inline-block;
+  content: "\e741";
+  cursor: pointer;
+}
+
+/* line 319, ../../app/assets/stylesheets/brijtalk.css.scss */
+footer a {
+  float: right;
+  text-indent: -999em;
+  width: 46px;
+  height: 45px;
+  background: transparent url("the-lab-logo.png") no-repeat left top;
+}
+
+/* line 321, ../../app/assets/stylesheets/brijtalk.css.scss */
+.main-content {
+  width: 980px;
+  margin: 0px auto;
+  overflow: hidden;
+  padding: 20px 0px;
+  min-height: 500px;
+}
+
+/* line 323, ../../app/assets/stylesheets/brijtalk.css.scss */
+.breadcrumbs {
+  margin-bottom: 10px;
+}
+
+/* line 324, ../../app/assets/stylesheets/brijtalk.css.scss */
+.breadcrumbs span {
+  font-size: 1.4em;
+}
+
+/* line 325, ../../app/assets/stylesheets/brijtalk.css.scss */
+.breadcrumbs span {
+  font-size: 1.4em;
+}
+
+/* line 326, ../../app/assets/stylesheets/brijtalk.css.scss */
+.breadcrumbs a {
+  margin-right: 20px;
+}
+
+/* line 327, ../../app/assets/stylesheets/brijtalk.css.scss */
+.breadcrumbs a:before, .breadcrumbs span:before {
+  content: '> ';
+}
+
+/* line 331, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lightbox {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-height: 100%;
+  width: 100%;
+  background-color: rgba(87, 91, 96, 0.4);
+}
+
+/* line 333, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lightbox > section {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 380px;
+  margin-left: -190px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+}
+
+/* line 334, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lightbox .close {
+  box-shadow: 0px 0px 4px #b04558;
+  margin: 4px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #b04558;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  border: none;
+  background: -webkit-linear-gradient(120deg, white 33%, #eed3d8 32%, #eed3d8 66%, white 67%);
+  background-size: 3px 3px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 5px;
+}
+
+/* line 338, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lightbox .close:before {
+  font-family: 'symbols-icons';
+  text-align: center;
+  line-height: 1em;
+  font-size: 1.4em;
+  width: 1.2em;
+  display: inline-block;
+  content: "\2715";
+  cursor: pointer;
+}
+
+/* line 343, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lightbox .close:hover {
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+  margin: 3px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #b04558;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  border: none;
+  background: -webkit-linear-gradient(120deg, white 33%, rgba(228, 229, 231, 0.9) 32%, rgba(228, 229, 231, 0.9) 66%, white 67%);
+  background-size: 3px 3px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 3px rgba(87, 91, 96, 0.9);
+  padding: 8px 29px 8px 31px;
+  margin: 4px;
+  padding: 5px;
+}
+
+/* line 349, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lightbox form input,
+.lightbox form select {
+  width: 100%;
+}
+
+/* line 352, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lightbox .next {
+  box-shadow: 0px 0px 4px #9ac224;
+  margin: 4px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #9ac224;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  border: none;
+  background: -webkit-linear-gradient(120deg, white 33%, #e6f3be 32%, #e6f3be 66%, white 67%);
+  background-size: 3px 3px;
+  float: right;
+}
+
+/* line 353, ../../app/assets/stylesheets/brijtalk.css.scss */
+.lightbox .next:hover {
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+  margin: 3px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 8px 30px;
+  text-decoration: none;
+  color: #9ac224;
+  font-family: 'KameronRegular', 'Times New Roman',serif;
+  border: none;
+  background: -webkit-linear-gradient(120deg, white 33%, rgba(228, 229, 231, 0.9) 32%, rgba(228, 229, 231, 0.9) 66%, white 67%);
+  background-size: 3px 3px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 3px rgba(87, 91, 96, 0.9);
+  padding: 8px 29px 8px 31px;
+  margin: 4px;
+}
+
+/*HOMEPAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* line 358, ../../app/assets/stylesheets/brijtalk.css.scss */
+#hero {
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* line 359, ../../app/assets/stylesheets/brijtalk.css.scss */
+#hero figure {
+  width: 540px;
+  float: left;
+}
+
+/* line 360, ../../app/assets/stylesheets/brijtalk.css.scss */
+#hero h2, #hero p, #hero h3, #hero form {
+  width: 380px;
+  float: right;
+}
+
+/* line 361, ../../app/assets/stylesheets/brijtalk.css.scss */
+#hero form {
+  padding: 20px 0px;
+}
+
+/* line 362, ../../app/assets/stylesheets/brijtalk.css.scss */
+#hero input {
+  width: 380px;
+}
+
+/* line 363, ../../app/assets/stylesheets/brijtalk.css.scss */
+#hero input.featured-cta {
+  width: 296px;
+  float: right;
+  margin-right: 20px;
+}
+
+/* line 365, ../../app/assets/stylesheets/brijtalk.css.scss */
+.feature {
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+  margin: 3px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 239px;
+  margin-left: 19px;
+  padding: 20px;
+  float: left;
+}
+
+/* line 367, ../../app/assets/stylesheets/brijtalk.css.scss */
+#homepage .feature {
+  padding-left: 40px;
+  background: -webkit-linear-gradient(top, #3043b0, #359276, #9ac224), rgba(255, 255, 255, 0.5);
+  background-size: 20px 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 370, ../../app/assets/stylesheets/brijtalk.css.scss */
+#homepage .feature:nth-child(4) {
+  background: -webkit-linear-gradient(top, #b04558, #76288f, #3043b0), rgba(255, 255, 255, 0.5);
+  background-size: 20px 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 371, ../../app/assets/stylesheets/brijtalk.css.scss */
+#homepage .feature:nth-child(2) {
+  background: -webkit-linear-gradient(top, #c64039, #d88613, #e1de14), rgba(255, 255, 255, 0.5);
+  background-size: 20px 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 372, ../../app/assets/stylesheets/brijtalk.css.scss */
+#homepage .feature ul {
+  list-style: circle inside none;
+  font-size: 1.4em;
+}
+
+/*ON CONFERENCE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* line 375, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conference-page {
+  overflow: visible;
+  position: relative;
+}
+
+/* line 376, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conf-info {
+  overflow: hidden;
+  border-bottom: 1px solid rgba(148, 152, 158, 0.9);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 377, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conf-info article, #conf-info aside {
+  width: 50%;
+  float: left;
+}
+
+/* line 378, ../../app/assets/stylesheets/brijtalk.css.scss */
+article h2, article time {
+  margin: 10px 0px;
+}
+
+/* line 379, ../../app/assets/stylesheets/brijtalk.css.scss */
+article time {
+  font-size: 2em;
+}
+
+/* line 380, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conf-info aside {
+  width: 330px;
+  float: right;
+  padding: 10px;
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+  margin: 3px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 5px 5px 20px 0px;
+}
+
+/* line 383, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conf-info aside span {
+  display: block;
+  text-align: center;
+  font-size: 1.6em;
+}
+
+/* line 384, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conf-info aside .featured-cta {
+  float: right;
+}
+
+/*h2 changing to input styling*/
+/* line 387, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conf-info article h2 {
+  padding-bottom: 8px;
+}
+
+/*p changing to input style*/
+/* line 389, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conf-info article p {
+  margin-top: 14px;
+  font-size: 2em;
+}
+
+/* line 390, ../../app/assets/stylesheets/brijtalk.css.scss */
+input#conference_agenda {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/*editing icon*/
+/*#conf-info article h2.editable:after, #conf-info article p.editable:after {
+    content:$edit;
+    padding-left:10px;
+}*/
+/* line 396, ../../app/assets/stylesheets/brijtalk.css.scss */
+#conf-info article p:after {
+  font-size: 1.6em;
+  line-height: 1em;
+}
+
+/* line 399, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants {
+  overflow: hidden;
+  padding: 20px 20px;
+}
+
+/* line 400, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants > li {
+  box-shadow: 0px 0px 3px rgba(87, 91, 96, 0.9);
+  margin: 3px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 200px;
+  float: left;
+  margin: 0px 40px 40px 0px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+/* line 404, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants > li:nth-child(4n) {
+  margin-right: 0px;
+}
+
+/* line 405, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants figure, #participants ul {
+  float: left;
+}
+
+/* line 406, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants figure {
+  position: relative;
+  border-right: 1px solid rgba(148, 152, 158, 0.9);
+}
+
+/* line 407, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants figure figcaption {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 8px 0px;
+  box-sizing: border-box;
+  background-color: rgba(12, 13, 13, 0.8);
+  color: rgba(201, 204, 207, 0.9);
+  text-shadow: 1px 1px 0px black;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+/* line 412, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li {
+  padding: 4px 8px;
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid rgba(148, 152, 158, 0.9);
+}
+
+/* line 413, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li:before {
+  font-family: 'symbols-icons';
+  text-align: center;
+  line-height: 1em;
+  font-size: 1.8em;
+  width: 1.2em;
+  display: inline-block;
+  content: "\1f464";
+  cursor: pointer;
+}
+
+/* line 418, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li.tel:before {
+  content: "\1f4de";
+}
+
+/* line 419, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li.email:before {
+  content: "\e800";
+}
+
+/* line 420, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li.linkedin:before {
+  content: "\f30c";
+}
+
+/* line 421, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li.facebook:before {
+  content: "\f301";
+}
+
+/* line 422, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li.twitter:before {
+  content: "\f303";
+}
+
+/* line 424, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li > span {
+  display: none;
+  width: 150px;
+  padding: 4px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 30;
+  background-color: rgba(12, 13, 13, 0.8);
+  color: rgba(201, 204, 207, 0.9);
+  text-shadow: 1px 1px 0px black;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+/* line 430, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li:hover > span {
+  display: block;
+}
+
+/* line 432, ../../app/assets/stylesheets/brijtalk.css.scss */
+#participants ul > li > a {
+  display: none;
+}
+
+/* line 435, ../../app/assets/stylesheets/brijtalk.css.scss */
+#steps li {
+  position: absolute;
+  top: 75px;
+  left: -180px;
+  width: 119px;
+  height: 62px;
+  padding: 10px 30px 0px;
+  background: transparent url("step.png") no-repeat left top;
+  opacity: 0.4;
+}
+
+/* line 441, ../../app/assets/stylesheets/brijtalk.css.scss */
+#steps li.active {
+  opacity: 1;
+}
+
+/* line 442, ../../app/assets/stylesheets/brijtalk.css.scss */
+#steps li:before {
+  content: '1';
+  font-size: 2em;
+  color: rgba(12, 13, 13, 0.8);
+  text-shadow: 1px 1px 0px white;
+  position: absolute;
+  top: 22px;
+  left: 14px;
+}
+
+/* line 443, ../../app/assets/stylesheets/brijtalk.css.scss */
+#steps li:nth-child(2) {
+  top: 250px;
+  padding: 2px 30px 8px;
+}
+
+/* line 444, ../../app/assets/stylesheets/brijtalk.css.scss */
+#steps li:nth-child(2):before {
+  content: '2';
+}
+
+/* line 445, ../../app/assets/stylesheets/brijtalk.css.scss */
+#steps li:nth-child(3) {
+  top: 130px;
+  left: 640px;
+}
+
+/* line 446, ../../app/assets/stylesheets/brijtalk.css.scss */
+#steps li:nth-child(3):before {
+  content: '3';
+}
+
+/* line 447, ../../app/assets/stylesheets/brijtalk.css.scss */
+#steps li p {
+  font-size: 1.2em;
+  color: rgba(87, 91, 96, 0.9);
+  text-shadow: none;
+}
+
+/*datetime picker */
+/* line 451, ../../app/assets/stylesheets/brijtalk.css.scss */
+#ui-datepicker-div {
+  width: 300px;
+}
+
+/*DASHBOARD~~~~~~~~~~~~~~~~~~~~*/
+/* line 454, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard article header {
+  margin-bottom: 20px;
+}
+
+/* line 455, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard article h2 {
+  display: inline-block;
+}
+
+/* line 456, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard article .featured-cta {
+  float: right;
+}
+
+/* line 457, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard article form {
+  float: right;
+  margin-bottom: -20px;
+  padding: 0px;
+}
+
+/* line 458, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard article form input[type="text"] {
+  width: 300px;
+}
+
+/* line 459, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard .filter {
+  float: right;
+  margin: 0px 10px -20px 0px;
+}
+
+/* line 460, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard .filter a {
+  padding: 0px 10px;
+  border-right: 1px solid #b04558;
+  border-bottom: none;
+}
+
+/* line 461, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard .filter a:last-child {
+  border-right: none;
+}
+
+/* line 462, ../../app/assets/stylesheets/brijtalk.css.scss */
+#dashboard .filter a.selected {
+  color: #76288f;
+}
+
+/*different status'*/
+/*call-draft = grey, 
+call-pending = blue, 
+call-oncall = green, 
+call-cancelled = red, 
+call-completed = pink, 
+call-archived = purple
+
+status-pending = blue
+status-oncall = green
+status-offline = red
+you
+chairman
+*/
+/*borders*/
+/* line 481, ../../app/assets/stylesheets/brijtalk.css.scss */
+
+/*participant list icons*/
+/* line 491, ../../app/assets/stylesheets/brijtalk.css.scss */
+.status-oncall ul > li:before, .status-talking ul > li:before {
+  color: #9ac224;
+}
+
+/* line 492, ../../app/assets/stylesheets/brijtalk.css.scss */
+.status-offline ul > li:before {
+  color: #b04558;
+}
+
+/* line 493, ../../app/assets/stylesheets/brijtalk.css.scss */
+.status-pending ul > li:before {
+  color: #3043b0;
+}
+
+/* line 495, ../../app/assets/stylesheets/brijtalk.css.scss */
+.delete {
+  visibility: hidden;
+}
+
+/* line 496, ../../app/assets/stylesheets/brijtalk.css.scss */
+.delete:before {
+  font-family: 'symbols-icons';
+  text-align: center;
+  line-height: 1em;
+  font-size: 1.8em;
+  width: 1.2em;
+  display: inline-block;
+  content: "\e729";
+  cursor: pointer;
+  visibility: visible;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* line 504, ../../app/assets/stylesheets/brijtalk.css.scss */
+#grid {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  background: transparent url("../12_col.png") repeat-y top left;
+  margin-left: -490px;
+}

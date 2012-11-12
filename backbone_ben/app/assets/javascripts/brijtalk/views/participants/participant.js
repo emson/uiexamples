@@ -15,7 +15,6 @@ Brijtalk.Views.Participant= Backbone.View.extend({
     this.$el.removeAttr('id').attr('id', attributes['msisdn']); // TODO format msisdn
     this.$el.toggleClass("vcard status-" + attributes['state']);
     this.$el.html(this.template( attributes ));
-    console.log(this.el.id);
     return this;
   },
   
