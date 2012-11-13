@@ -3,7 +3,8 @@ Brijtalk.Views.Participant= Backbone.View.extend({
   template: JST['brijtalk/templates/participants/participant'],
 
   events: {
-   'hover' : 'clickAction'
+   'hover' : 'hoverAction',
+   'click' : 'clickAction',
   },
 
   initialize: function() {
@@ -18,12 +19,16 @@ Brijtalk.Views.Participant= Backbone.View.extend({
     return this;
   },
   
-  clickAction: function(e) {
+  hoverAction: function(e) {
     if ($(e.currentTarget).find('#info').is(":hidden")) {
       $(e.currentTarget).find('#info').slideDown('slow');
     }else {
       $(e.currentTarget).find('#info').slideUp('slow');
     }
   },
+
+  clickAction: function(e) {
+    this.$el.find(".card").toggleClass("rotate onBack");
+  }
 
 });

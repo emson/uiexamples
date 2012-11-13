@@ -398,7 +398,7 @@ input#conference_agenda {margin-top:10px; width:100%;}
 
 
 #participants > li {
-    width:150px; 
+    width:200px; 
     float:left; 
     margin:0px 40px 40px 0px;
 }
@@ -434,11 +434,11 @@ input#conference_agenda {margin-top:10px; width:100%;}
   display: none;
   width:100%; padding:8px 0px; box-sizing:border-box;
   background-color: $superdark;
+  @include lighttext; font-size:1.4em;
   position: absolute;
   left: 0;
   bottom: 0;
 }
-
 
 /*datetime picker */
 
@@ -553,6 +553,60 @@ input#conference_agenda {margin-top:10px; width:100%;}
 
 
 
+/* flipping the cards*/
+
+
+.card {
+    width: 200px; height: 202px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border: 1px solid black; 
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+}
+
+.rotate {
+    -webkit-transform: rotateY(180deg);             
+}
+
+.rotate .front {
+    z-index: 0;          
+}
+
+.face {
+position: absolute;
+-webkit-backface-visibility: hidden;
+}
+
+.container {
+    width: 200px; height: 412px;
+    -webkit-perspective: 1000;
+}
+
+.back{
+    z-index: 10;
+    width: 500px; height: 500px;
+    background: white;
+    -webkit-transform: rotateY(180deg);
+
+}
+
+.onBack{
+    position: absolute;
+    bottom: 20px;
+    width: 500px; height: 500px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border: 1px solid black; 
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;  
+}
+
+    
 
 
 
