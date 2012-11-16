@@ -395,6 +395,9 @@ input#conference_agenda {margin-top:10px; width:100%;}
 }*/
 #conf-info article p:after {font-size:1.6em;line-height:1em;}
 
+ul#participants {
+    padding-top: 20px;
+}
 
 
 #participants > li {
@@ -553,7 +556,7 @@ input#conference_agenda {margin-top:10px; width:100%;}
 
 
 
-/* flipping the cards*/
+/* flipping the cards
 
 
 .card {
@@ -606,7 +609,7 @@ position: absolute;
     -webkit-transition: 0.5s;  
 }
 
-    
+*/ 
 
 
 
