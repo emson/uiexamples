@@ -1,0 +1,44 @@
+
+  <header role="banner">
+    <div class="wrapper">
+      <h1><a href="/">BrijTalk</a></h1>
+      <nav>
+        <a href="/conferences">Dashboard</a>
+        <a href="/contacts">| Contacts</a>
+      </nav>
+      <p class="logged-in"><span>Hello Ben Emson </span><a href="/users/sign_out" data-method="delete" rel="nofollow">Log Out</a></p>
+    </div>
+  </header>
+
+  <%= content_tag "div", "", id: 'page_data', data: { participants: @participants, conference: @conference} %>
+
+  <section id='conference-page' class='main-content'>
+
+    <nav class="breadcrumbs">
+      <a href="/conferences">Dashboard</a>
+      <span>Please dial in</span>
+    </nav>
+
+    <section id='conf-info' class="call-completed">
+      <aside>
+        <p>
+          <span class="tel">+442035145919</span>
+          <span class="call-status">Completed
+          </span>
+        </p>
+          <div class="button featured-cta">Archive</div>
+      </aside>
+    </section>
+
+    <ul id='participants'>loading ....</ul>
+
+  </section>
+
+   <footer>
+      <div class="wrapper">
+           <a href="http://thelab.o2.com/">The Lab</a>
+           <p>&copy; copyright Telefonica</p>
+       </div>
+   </footer>
+
+

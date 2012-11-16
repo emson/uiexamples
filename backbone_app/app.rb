@@ -19,9 +19,18 @@ class App < Sinatra::Base
     settings.assets["#{params[:file]}.css"]
   end
 
+  get '/assets/stylesheets/fonts/:file' do
+    # content_type 'text/css'
+    settings.assets["#{params[:file]}"]
+  end
+
   get '/assets/javascripts/:file.js' do
     content_type 'application/javascript'
     settings.assets["#{params[:file]}.js"]
+  end
+
+  get '/conferences/:id' do
+    erb :conference
   end
 
   use BackboneApp::Controllers::BackboneAppController

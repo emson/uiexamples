@@ -1,0 +1,17 @@
+<li class="status-<%= participant.state %> vcard", id="<%=participant.msisdn.substr(length - 10)%>">
+  <figure>
+    <img class="photo" src="http://robohash.org/<%= participant.msisdn.substr(length - 10) %>.jpg?size=150x170&bgset=bg2" alt="" />
+    <figcaption class="nickname">
+      <span class='nickname'><%= participant_name %></span>
+      <span class='status'>[<%= participant.state %>]</span>
+    </figcaption>
+  </figure>
+  <ul>
+    <li class="fn"><span><%= participant.nickname %></span></li>
+    <li class="tel"><span><%= participant.msisdn %></span></li>
+    <li class="email"><span><%= participant.contact_email %></span></li>
+    <li class="linkedin"><a href="" title="View <%= participant.nickname %>'s profile on LinkedIn" rel="external"><%= participant.nickname %> on LinkedIn</a></li>
+    <li class="facebook"><a href="" title="View <%= participant.nickname %>'s profile on Facebook" rel="external"><%= participant.nickname %> on Facebook</a></li>
+    <li class="twitter"><a href="" title="View <%= participant.nickname %> on Twitter" rel="external"><%= participant.nickname %></a></li>
+  </ul>
+</li>
